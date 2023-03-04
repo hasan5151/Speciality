@@ -5,4 +5,31 @@
     <string name="aciklama">Bu tətbiq Azərbaycan ərazisində yerləşən bütün universitetlərin bütün ixtisaslarını əhatə edir</string>
     <string name="telimat">Təlimat</string>
     <string name="haqqinda">Haqqinda</string>
+    <string name="cixis">Çıxış</string>
+    <string name="cix">Hesabdan çıxın</string>
+    <string name="login">Login</string>
+    <string name="paylas">Paylaş</string>
+    <string name="welcome">Gələcək sənin Seçim sənin...</string>
+    <string name="main">Əsas</string>
+    <string name="ilk">Məktəbi bitirmək üzrəsən və hələ də kim olacağına qərar verməmisən? Elə isə doğru yerdəsən. Mən sənə düzgün seçim etməkdə kömək edəcəyəm. Gəl birlikdə başlayaq!!!</string>
+    <string name="sinif89">VIII  və IX</string>
+    <string name="sinif1011">X  və  XI</string>
+    <string name="about">Bu tətbiq gələcək ali təhsilini Azərbaycan ərazisində yerləşən universitetlərdə almaq istəyən şagirdlər üçün nəzərdə tutulub. Hazırda oxuduğun sinifi seç, ixtisas və peşələr haqqında məlumat al!
+        Əgər abituriyentsənsə qeydiyyatdan keçərək topladığın bala uyğun və seçdiyin ixtisas qrupu üzrə bütün ixtisasları görə bilərsən. Uğurlar</string>
+    <string name="sec">Hazırda oxuduğun sinifi seç!</string>
+    <string name="email">Email daxil edin:</string>
+    <string name="parol">Parol daxil edin:</string>
+    <string name="giris">Daxil ol</string>
+    <string name="qeydiyyat">Qeydiyyat</string>
+    <string name="xos">"Xoş gəldin "</string>
+    <string name="notLogin">Hesabınız yoxdursa, qeydiyyatdan keçin</string>
+    <string name="qeydiyyatdanKec">Qeydiyyatdan keçin</string>
+    <string name="qeydiyyatedin">Qeydiyyatdan keçin</string>
+    <string name="addaxiledin">Adınızı daxil edin</string>
+    <string name="emaildaxil">Email daxil edin</string>
+    <string name="paroldaxil">Parol daxil edin</string>
+    <string name="ireli">Növbəti</string>
+    <string name="bizeyazin">Bizə yazın</string>
+    <string name="hesab">Hesabım</string>
+    <string name="option">İxtisas seçin</string>
 </resources>
