@@ -18,7 +18,9 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupWithNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -31,6 +33,7 @@ class MainActivity : AppCompatActivity() {
     private val viewModel by viewModels<MainViewModel>()
     private lateinit var auth: FirebaseAuth
     private lateinit var navHostFragment: NavHostFragment
+    private lateinit var appBarConfiguration : AppBarConfiguration
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -45,6 +48,8 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNav.setupWithNavController(navHostFragment.navController)
         binding.navigationView.setupWithNavController(navHostFragment.navController)
 
+        appBarConfiguration = AppBarConfiguration(navHostFragment.navController.graph)
+
         val baslik = binding.navigationView.inflateHeaderView(R.layout.navigation_title)
         viewModel.name.observe(this) {
             binding.toolbar.subtitle = "Xoş gəldin $it"
@@ -58,7 +63,7 @@ class MainActivity : AppCompatActivity() {
                 Log.e("navView", "true")
             }
             else{ Log.e("navView", "false")
-               binding.navigationView.removeHeaderView(binding.navigationView.getHeaderView(0));
+               binding.toolbar.navigationIcon=null
             }
 
         }
@@ -97,5 +102,8 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        return findNavController(R.id.navHostFragmentInMain).navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 }

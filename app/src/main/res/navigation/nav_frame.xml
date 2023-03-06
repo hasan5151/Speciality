@@ -27,6 +27,12 @@
         <action
             android:id="@+id/action_homeFragment_to_loginFragment2"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_eightNineGradeFragment"
+            app:destination="@id/eightNineGradeFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_tenElevenFragment"
+            app:destination="@id/tenElevenFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -39,6 +45,9 @@
         <action
             android:id="@+id/action_loginFragment_to_accountFragment"
             app:destination="@id/accountFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_forgetPasswordFragment"
+            app:destination="@id/forgetPasswordFragment" />
     </fragment>
     <fragment
         android:id="@+id/telimat"
@@ -64,4 +73,19 @@
         android:name="com.shoppingapp.WriteUsFragment"
         android:label="fragment_write_us"
         tools:layout="@layout/fragment_write_us" />
+    <fragment
+        android:id="@+id/eightNineGradeFragment"
+        android:name="com.shoppingapp.EightNineGradeFragment"
+        android:label="fragment_eight_nine_grade"
+        tools:layout="@layout/fragment_eight_nine_grade" />
+    <fragment
+        android:id="@+id/tenElevenFragment"
+        android:name="com.shoppingapp.TenElevenFragment"
+        android:label="fragment_ten_eleven"
+        tools:layout="@layout/fragment_ten_eleven" />
+    <fragment
+        android:id="@+id/forgetPasswordFragment"
+        android:name="com.shoppingapp.ForgetPasswordFragment"
+        android:label="fragment_forget_password"
+        tools:layout="@layout/fragment_forget_password" />
 </navigation>

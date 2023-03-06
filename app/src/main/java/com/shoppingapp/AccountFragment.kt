@@ -40,8 +40,9 @@ class AccountFragment : Fragment() {
             val password = binding.password.text.toString()
             val name = binding.name.text.toString()
 
-            if (email.equals("") || password.equals("")) {
-                Toast.makeText(context, "Email və parol boş ola bilməz", Toast.LENGTH_LONG).show()
+            if (email.equals("") || password.equals("") || name.equals("")) {
+
+                Toast.makeText(context, "Punktlar boş ola bilməz", Toast.LENGTH_LONG).show()
             } else {
                 auth.createUserWithEmailAndPassword(email, password).addOnSuccessListener {
 

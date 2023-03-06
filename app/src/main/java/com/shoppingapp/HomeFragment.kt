@@ -53,6 +53,17 @@ class HomeFragment : Fragment() {
             })
         }
 
+        binding.sinif1011.setOnClickListener {
+            val action = HomeFragmentDirections.actionHomeFragmentToEightNineGradeFragment()
+            Navigation.findNavController(it).navigate(action)
+        }
+
+        binding.sinif89.setOnClickListener {
+            val action = HomeFragmentDirections.actionHomeFragmentToEightNineGradeFragment()
+            Navigation.findNavController(it).navigate(action)
+        }
+
+
     }
 
     override fun onCreateView(
@@ -64,6 +75,8 @@ class HomeFragment : Fragment() {
 
         // Inflate the layout for this fragment
         return binding.root
+
+
     }
 
     override fun onDestroy() {
