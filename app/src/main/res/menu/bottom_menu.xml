@@ -25,8 +25,7 @@
         android:title="@string/main"
         />
     <item
-        android:id="@+id/cıxış"
+        android:id="@+id/exitFragment"
         android:icon="@drawable/baseline_exit_to_app_24"
-        android:title="@string/cixis"
-        />
+        android:title="@string/cixis" />
 </menu>

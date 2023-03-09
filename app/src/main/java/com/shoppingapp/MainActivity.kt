@@ -1,5 +1,7 @@
 package com.shoppingapp
 
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -16,12 +18,15 @@ import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.NavController
+import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -47,6 +52,16 @@ class MainActivity : AppCompatActivity() {
 
         binding.bottomNav.setupWithNavController(navHostFragment.navController)
         binding.navigationView.setupWithNavController(navHostFragment.navController)
+
+        navHostFragment.navController.addOnDestinationChangedListener { controller, destination, arguments ->
+            Log.e("yoxla", "ok1")
+            if (destination.id==R.id.exitFragment){
+
+                    }
+                }
+
+
+
 
         appBarConfiguration = AppBarConfiguration(navHostFragment.navController.graph)
 
@@ -78,7 +93,14 @@ class MainActivity : AppCompatActivity() {
                                                     }
                 R.id.writeUsFragment ->
                 {
-                    navHostFragment.navController.navigate(R.id.writeUsFragment)
+
+                        startActivity(
+                            Intent(
+                                Intent.ACTION_SENDTO,
+                                Uri.parse("mailto:aynur.abbaszadehh@gmail.com")
+                            )
+                        )
+
                     binding.drawer.closeDrawer(GravityCompat.START)
                 }
                 R.id.facultyFragment ->
@@ -106,4 +128,5 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         return findNavController(R.id.navHostFragmentInMain).navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
-}
+
+ }

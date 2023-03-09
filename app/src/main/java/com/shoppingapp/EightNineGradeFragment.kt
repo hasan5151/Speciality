@@ -5,9 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import com.shoppingapp.databinding.FragmentEightNineGradeBinding
 
-class EightNineGradeFragment : Fragment() {
+class EightNineGradeFragment() : Fragment() {
     private lateinit var binding : FragmentEightNineGradeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,5 +24,6 @@ class EightNineGradeFragment : Fragment() {
 
         return binding.root
     }
+
 
 }
