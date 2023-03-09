@@ -9,7 +9,8 @@ import androidx.activity.OnBackPressedCallback
 import com.shoppingapp.databinding.FragmentEightNineGradeBinding
 
 class EightNineGradeFragment() : Fragment() {
-    private lateinit var binding : FragmentEightNineGradeBinding
+    private var _binding : FragmentEightNineGradeBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,10 +21,13 @@ class EightNineGradeFragment() : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        binding = FragmentEightNineGradeBinding.inflate(inflater)
+        _binding = FragmentEightNineGradeBinding.inflate(inflater)
 
         return binding.root
     }
 
-
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
 }

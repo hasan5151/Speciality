@@ -17,7 +17,8 @@ import com.google.firebase.ktx.Firebase
 import com.shoppingapp.databinding.FragmentAccountBinding
 
 class AccountFragment : Fragment() {
-    private lateinit var binding: FragmentAccountBinding
+    private var _binding: FragmentAccountBinding? = null
+    private val binding get() = _binding!!
     private lateinit var auth: FirebaseAuth
 
 
@@ -25,7 +26,7 @@ class AccountFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        binding = FragmentAccountBinding.inflate(inflater)
+        _binding = FragmentAccountBinding.inflate(inflater)
         return binding.root
 
     }
@@ -62,5 +63,10 @@ class AccountFragment : Fragment() {
         }
 
 
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 }

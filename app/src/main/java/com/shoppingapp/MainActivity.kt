@@ -73,7 +73,7 @@ class MainActivity : AppCompatActivity() {
             val toggle = ActionBarDrawerToggle(this, binding.drawer, binding.toolbar, 0, 0)
             binding.drawer.addDrawerListener(toggle)
             toggle.syncState()
-            if(it.isNotEmpty()){
+            if(it!!.isNotEmpty()){
                 binding.navigationView.isVisible = true
                 Log.e("navView", "true")
             }

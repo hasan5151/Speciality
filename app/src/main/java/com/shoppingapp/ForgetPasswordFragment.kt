@@ -14,7 +14,9 @@ import com.shoppingapp.databinding.FragmentForgetPasswordBinding
 
 class ForgetPasswordFragment : Fragment() {
 
-private lateinit var binding : FragmentForgetPasswordBinding
+    private var _binding: FragmentForgetPasswordBinding? = null
+    private val binding get() = _binding!!
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -24,7 +26,7 @@ private lateinit var binding : FragmentForgetPasswordBinding
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-         binding = FragmentForgetPasswordBinding.inflate(inflater)
+       _binding = FragmentForgetPasswordBinding.inflate(inflater)
         return binding.root
     }
 
@@ -33,32 +35,36 @@ private lateinit var binding : FragmentForgetPasswordBinding
 
 
 
-            binding.gonderBtn.setOnClickListener {
-                val email = binding.yenidenMail.text.toString()
-                if(email.equals("")){
-                    Toast.makeText(context,"Email daxil etmədiniz", Toast.LENGTH_LONG).show()
-                }
-                else{
-                    MaterialAlertDialogBuilder(requireContext()).apply {
-                        setTitle("kod")
-                        setMessage("Emailinize yeni kod gonderdik")
-                        setPositiveButton("ok"){ dialog, a ->
-                            FirebaseAuth.getInstance().sendPasswordResetEmail(email)
-                                .addOnCompleteListener { task ->
-                                    if (task.isSuccessful) {
-                                     Log.e("password", "Mail gonderildi")
+        binding.gonderBtn.setOnClickListener {
+            val email = binding.yenidenMail.text.toString()
+            if (email.equals("")) {
+                Toast.makeText(context, "Email daxil etmədiniz", Toast.LENGTH_LONG).show()
+            } else {
+                MaterialAlertDialogBuilder(requireContext()).apply {
+                    setTitle("kod")
+                    setMessage("Emailinize yeni kod gonderdik")
+                    setPositiveButton("ok") { dialog, a ->
+                        FirebaseAuth.getInstance().sendPasswordResetEmail(email)
+                            .addOnCompleteListener { task ->
+                                if (task.isSuccessful) {
+                                    Log.e("password", "Mail gonderildi")
 
-                                    } else{
-                                        Log.e("password", "Gonderilmedi $email")
-                                    }
+                                } else {
+                                    Log.e("password", "Gonderilmedi $email")
                                 }
+                            }
 
-                        }
-                    }.show()
-                }
-
+                    }
+                }.show()
             }
+
         }
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
+}
 
 
