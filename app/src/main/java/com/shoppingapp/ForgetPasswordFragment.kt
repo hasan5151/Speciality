@@ -17,11 +17,6 @@ class ForgetPasswordFragment : Fragment() {
     private var _binding: FragmentForgetPasswordBinding? = null
     private val binding get() = _binding!!
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
@@ -41,9 +36,9 @@ class ForgetPasswordFragment : Fragment() {
                 Toast.makeText(context, "Email daxil etmədiniz", Toast.LENGTH_LONG).show()
             } else {
                 MaterialAlertDialogBuilder(requireContext()).apply {
-                    setTitle("kod")
+
                     setMessage("Emailinize yeni kod gonderdik")
-                    setPositiveButton("ok") { dialog, a ->
+                    setPositiveButton("Yaxşı") { dialog, a ->
                         FirebaseAuth.getInstance().sendPasswordResetEmail(email)
                             .addOnCompleteListener { task ->
                                 if (task.isSuccessful) {

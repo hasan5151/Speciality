@@ -31,12 +31,17 @@ class HomeFragment : Fragment() {
     private lateinit var auth: FirebaseAuth
     private lateinit var database: FirebaseDatabase
 
-
     private val viewModel by activityViewModels<MainViewModel>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         database = Firebase.database
+
+        val university = UniversityModel(1, "https://firebasestorage.googleapis.com/v0/b/ixtisas-5c890.appspot.com/o/bdu.jpg?alt=media&token=d6a7b621-8282-4ece-b6f4-a634f871", "Bakı Dovlət Universiteti")
+        database.getReference("university").child(university.id.toString()).setValue(university)
+
+        val faculty = FacultyModel(1, 1, "Komputer muhendisliyi", 650.0, 3000,true)
+        database.getReference("faculty").child(faculty.id.toString()).setValue(faculty)
 
 
         auth = Firebase.auth
@@ -54,7 +59,7 @@ class HomeFragment : Fragment() {
         }
 
         binding.sinif1011.setOnClickListener {
-            val action = HomeFragmentDirections.actionHomeFragmentToEightNineGradeFragment()
+            val action = HomeFragmentDirections.actionHomeFragmentToTenElevenFragment()
             Navigation.findNavController(it).navigate(action)
         }
 
@@ -84,6 +89,8 @@ class HomeFragment : Fragment() {
         _binding = null
     }
 
+
     }
+
 
 

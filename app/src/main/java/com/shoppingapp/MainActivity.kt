@@ -38,11 +38,15 @@ class MainActivity : AppCompatActivity() {
     private val viewModel by viewModels<MainViewModel>()
     private lateinit var auth: FirebaseAuth
     private lateinit var navHostFragment: NavHostFragment
-    private lateinit var appBarConfiguration : AppBarConfiguration
+    private lateinit var appBarConfiguration: AppBarConfiguration
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
+
         auth = Firebase.auth
 
         navHostFragment =
@@ -55,13 +59,10 @@ class MainActivity : AppCompatActivity() {
 
         navHostFragment.navController.addOnDestinationChangedListener { controller, destination, arguments ->
             Log.e("yoxla", "ok1")
-            if (destination.id==R.id.exitFragment){
+            if (destination.id == R.id.exitFragment) {
 
-                    }
-                }
-
-
-
+            }
+        }
 
         appBarConfiguration = AppBarConfiguration(navHostFragment.navController.graph)
 
@@ -73,12 +74,12 @@ class MainActivity : AppCompatActivity() {
             val toggle = ActionBarDrawerToggle(this, binding.drawer, binding.toolbar, 0, 0)
             binding.drawer.addDrawerListener(toggle)
             toggle.syncState()
-            if(it!!.isNotEmpty()){
+            if (it!!.isNotEmpty()) {
                 binding.navigationView.isVisible = true
                 Log.e("navView", "true")
-            }
-            else{ Log.e("navView", "false")
-               binding.toolbar.navigationIcon=null
+            } else {
+                Log.e("navView", "false")
+                binding.toolbar.navigationIcon = null
             }
 
         }
@@ -90,27 +91,25 @@ class MainActivity : AppCompatActivity() {
                     navHostFragment.navController.navigate(R.id.loginFragment)
                     binding.drawer.closeDrawer(GravityCompat.START)
                     viewModel.onSetname("")
-                                                    }
-                R.id.writeUsFragment ->
-                {
+                }
+                R.id.writeUsFragment -> {
 
-                        startActivity(
-                            Intent(
-                                Intent.ACTION_SENDTO,
-                                Uri.parse("mailto:aynur.abbaszadehh@gmail.com")
-                            )
+                    startActivity(
+                        Intent(
+                            Intent.ACTION_SENDTO,
+                            Uri.parse("mailto:aynur.abbaszadehh@gmail.com")
                         )
+                    )
 
                     binding.drawer.closeDrawer(GravityCompat.START)
                 }
-                R.id.facultyFragment ->
-                {
+                R.id.facultyFragment -> {
                     navHostFragment.navController.navigate(R.id.facultyFragment)
                     binding.drawer.closeDrawer(GravityCompat.START)
                 }
 
             }
-           false
+            false
         }
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
@@ -124,9 +123,13 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+
+
     }
+
     override fun onSupportNavigateUp(): Boolean {
         return findNavController(R.id.navHostFragmentInMain).navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
- }
+
+}

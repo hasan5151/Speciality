@@ -7,4 +7,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="yellow">#A39304</color>
     <color name="yellowLight">#C6B946</color>
+    <color name="yellowLightMax">#E3D66A</color>
+    <color name = "blackLight">#232323</color>
 </resources>
