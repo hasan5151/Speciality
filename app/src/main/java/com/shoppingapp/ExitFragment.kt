@@ -17,7 +17,8 @@ class ExitFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        MaterialAlertDialogBuilder(requireContext()).apply {
+        MaterialAlertDialogBuilder(requireContext(),R.style.newAlertStyle).apply {
+            setCancelable(false)
             setTitle("Çıxışa hazırlaşırıq...")
             setMessage("Əminsənmi?")
             setNegativeButton("Xeyr") { dialog, a ->

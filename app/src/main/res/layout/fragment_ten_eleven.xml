@@ -28,7 +28,7 @@
         android:paddingStart="10dp"
         android:paddingTop="20dp"
         android:paddingEnd="20dp"
-        android:text="Öyrənmək istədiyin ixtisas  və onun gələcək iş imkanları barədə məlumat almaq üçün universitet seç"
+        android:text="@string/meslek"
         android:textColor="@color/main"
         android:textSize="14sp"
         android:textStyle="bold"

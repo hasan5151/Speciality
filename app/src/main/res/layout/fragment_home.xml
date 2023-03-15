@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.8" />
+        app:layout_constraintGuide_percent="0.69" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
@@ -98,8 +98,8 @@
         android:fontFamily="serif"
         android:gravity="center|center_vertical"
         android:paddingStart="10dp"
-        android:paddingTop="15dp"
-        android:paddingBottom="15dp"
+        android:paddingTop="30dp"
+        android:paddingBottom="30dp"
         android:text="@string/sinif89"
         android:textAllCaps="false"
         android:textColor="@color/yellow"
@@ -122,8 +122,8 @@
         android:fontFamily="serif"
         android:gravity="center|center_horizontal|center_vertical"
         android:includeFontPadding="true"
-        android:paddingTop="15dp"
-        android:paddingBottom="15dp"
+        android:paddingTop="30dp"
+        android:paddingBottom="30dp"
         android:text="@string/sinif1011"
         android:textAllCaps="false"
         android:textColor="@color/yellow"

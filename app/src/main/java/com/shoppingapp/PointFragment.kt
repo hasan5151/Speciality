@@ -5,10 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.shoppingapp.databinding.FragmentTelimatBinding
+import com.shoppingapp.databinding.FragmentPointBinding
 
-class TelimatFragment : Fragment() {
-    private var _binding: FragmentTelimatBinding? = null
+class PointFragment : Fragment() {
+
+    private var _binding : FragmentPointBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -16,13 +17,17 @@ class TelimatFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
 
-        _binding = FragmentTelimatBinding.inflate(inflater, container, false)
+        _binding = FragmentPointBinding.inflate(inflater)
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-    override fun onDestroyView() {
-        super.onDestroyView()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
         _binding = null
     }
 

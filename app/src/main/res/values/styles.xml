@@ -10,4 +10,12 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
     </style>
+
+    <style name="newAlertStyle" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="android:background">
+
+            @color/yellowLight
+        </item>
+
+    </style>
 </resources>

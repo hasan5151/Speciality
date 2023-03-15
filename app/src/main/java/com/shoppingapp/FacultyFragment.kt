@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.shoppingapp.databinding.FragmentFacultyBinding
 
 class FacultyFragment : Fragment() {
@@ -25,6 +26,23 @@ class FacultyFragment : Fragment() {
         _binding = FragmentFacultyBinding.inflate(inflater)
 
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        with(binding){
+            allUniBtn.setOnClickListener {
+                val action = FacultyFragmentDirections.actionFacultyFragmentToAllUniversityFragment()
+                findNavController().navigate(action)
+            }
+
+            pointBtn.setOnClickListener {
+                val action = PointFragmentDirections.actionPointFragmentToFacultyFragment()
+                findNavController().navigate(action)
+            }
+
+        }
     }
 
     override fun onDestroy() {

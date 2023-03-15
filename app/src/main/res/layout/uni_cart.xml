@@ -6,8 +6,8 @@
 
     <data>
         <variable
-            name="university"
-            type="com.shoppingapp.UniversityModel" />
+            name="meslek"
+            type="com.shoppingapp.MeslekModel" />
     </data>
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
@@ -31,42 +31,24 @@
             android:layout_height="wrap_content"
             android:elevation="20dp">
 
-            <ImageView
-                android:id="@+id/uniLogo"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:paddingStart="10dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintHeight_max="60dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.581"
-                app:layout_constraintWidth_max="60dp"
-                tools:srcCompat="@tools:sample/avatars" />
-
             <TextView
                 android:id="@+id/uniName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
                 android:fontFamily="casual"
                 android:gravity="center"
                 android:paddingStart="5dp"
                 android:paddingTop="10dp"
                 android:paddingEnd="5dp"
                 android:paddingBottom="10dp"
-                android:text="@{university.name}"
+                android:text="@{meslek.name}"
                 android:textColor="@color/yellow"
                 android:textSize="16sp"
                 android:textStyle="bold|italic"
-                app:layout_constraintBottom_toBottomOf="@+id/uniLogo"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/uniLogo"
-                app:layout_constraintTop_toTopOf="@+id/uniLogo" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

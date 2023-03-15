@@ -34,4 +34,5 @@
     <string name="option">İxtisas seçin</string>
     <string name="metn1">Meslek seçiminde yapılan hatalar: Meslek seçerken birçok öğrencinin sıkça yaptığı hatalar var. Bu hataları sıralayacak olursak: -Meslek hakkında tam bilgi sahibi olmamak -Ebeveynin istediği mesleği seçmek -Yetenekler ve kişilik özellikleri göz ardı edilip statüsüne bakılarak meslek seçmek. -Alınan puana göre tercih yapmak. -Neresi olursa olsun bir bölüme yerleşeyim düşüncesiyle tercih yapmak -Akran grubunun etkisinde kalmak. -Bölüm değil üniversite adı için tercih yapmak</string>
     <string name="yaz">Təkliflərinizi bizə yazın</string>
+    <string name="meslek">Öyrənmək istədiyin ixtisas  və onun gələcək iş imkanları barədə məlumat almaq üçün seçim et</string>
 </resources>

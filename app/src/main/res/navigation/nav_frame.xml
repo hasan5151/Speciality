@@ -50,7 +50,11 @@
         android:id="@+id/telimat"
         android:name="com.shoppingapp.TelimatFragment"
         android:label="fragment_telimat"
-        tools:layout="@layout/fragment_telimat" />
+        tools:layout="@layout/fragment_telimat" >
+        <action
+            android:id="@+id/action_telimat_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/accountFragment"
         android:name="com.shoppingapp.AccountFragment"
@@ -64,7 +68,14 @@
         android:id="@+id/facultyFragment"
         android:name="com.shoppingapp.FacultyFragment"
         android:label="fragment_faculty"
-        tools:layout="@layout/fragment_faculty" />
+        tools:layout="@layout/fragment_faculty" >
+        <action
+            android:id="@+id/action_facultyFragment_to_allUniversityFragment"
+            app:destination="@id/allUniversityFragment" />
+        <action
+            android:id="@+id/action_facultyFragment_to_pointFragment"
+            app:destination="@id/pointFragment" />
+    </fragment>
     <fragment
         android:id="@+id/eightNineGradeFragment"
         android:name="com.shoppingapp.EightNineGradeFragment"
@@ -88,6 +99,24 @@
         <action
             android:id="@+id/action_exitFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/allUniversityFragment"
+        android:name="com.shoppingapp.AllUniversityFragment"
+        android:label="fragment_all_university"
+        tools:layout="@layout/fragment_all_university" >
+        <action
+            android:id="@+id/action_allUniversityFragment_to_facultyFragment"
+            app:destination="@id/facultyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pointFragment"
+        android:name="com.shoppingapp.PointFragment"
+        android:label="fragment_point"
+        tools:layout="@layout/fragment_point" >
+        <action
+            android:id="@+id/action_pointFragment_to_facultyFragment"
+            app:destination="@id/facultyFragment" />
     </fragment>
 
 </navigation>
