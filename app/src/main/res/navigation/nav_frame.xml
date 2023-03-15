@@ -85,7 +85,11 @@
         android:id="@+id/tenElevenFragment"
         android:name="com.shoppingapp.TenElevenFragment"
         android:label="fragment_ten_eleven"
-        tools:layout="@layout/fragment_ten_eleven" />
+        tools:layout="@layout/fragment_ten_eleven" >
+        <action
+            android:id="@+id/action_tenElevenFragment_to_meslekDefinition"
+            app:destination="@id/meslekDefinition" />
+    </fragment>
     <fragment
         android:id="@+id/forgetPasswordFragment"
         android:name="com.shoppingapp.ForgetPasswordFragment"
@@ -117,6 +121,14 @@
         <action
             android:id="@+id/action_pointFragment_to_facultyFragment"
             app:destination="@id/facultyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/meslekDefinition"
+        android:name="com.shoppingapp.MeslekDefinition"
+        android:label="MeslekDefinition" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
     </fragment>
 
 </navigation>

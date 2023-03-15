@@ -9,13 +9,19 @@ import com.shoppingapp.databinding.UniCartBinding
 class AdapterMeslek : RecyclerView.Adapter<AdapterMeslek.MeslekViewHolder>() {
 
     private val meslekList  = arrayListOf<MeslekModel>()
+    var clickListener :((item : MeslekModel)->Unit)? = null
+    fun onClickListener(listener :  (item : MeslekModel)->Unit){
+        clickListener = listener
+    }
+
 
     inner class MeslekViewHolder(val uniCartBinding: UniCartBinding) :
         RecyclerView.ViewHolder(uniCartBinding.root){
             fun bind(item: MeslekModel){
-
                 uniCartBinding.meslek = item
-
+                uniCartBinding.root.setOnClickListener {
+                    clickListener?.invoke(item)
+                }
             }
         }
 

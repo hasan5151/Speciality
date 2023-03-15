@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.database
@@ -49,6 +50,11 @@ class TenElevenFragment : Fragment() {
             override fun onChildMoved(dataSnapshot: DataSnapshot, prevChildKey: String?) {}
             override fun onCancelled(databaseError: DatabaseError) {}
         })
+
+        meslekAdapter.onClickListener {
+            val navigate = TenElevenFragmentDirections.actionTenElevenFragmentToMeslekDefinition(it.id)
+            findNavController().navigate(navigate)
+        }
     }
 
     fun setRw() {
