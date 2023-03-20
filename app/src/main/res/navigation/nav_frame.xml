@@ -14,7 +14,7 @@
             app:destination="@id/loginFragment" />
         <action
             android:id="@+id/action_homeFragment_to_telimatFragment"
-            app:destination="@id/telimat" />
+            app:destination="@id/telimatFragment" />
         <action
             android:id="@+id/action_homeFragment_to_facultyFragment"
             app:destination="@id/facultyFragment" />
@@ -47,7 +47,7 @@
             app:destination="@id/forgetPasswordFragment" />
     </fragment>
     <fragment
-        android:id="@+id/telimat"
+        android:id="@+id/telimatFragment"
         android:name="com.shoppingapp.TelimatFragment"
         android:label="fragment_telimat"
         tools:layout="@layout/fragment_telimat" >
@@ -130,5 +130,10 @@
             android:name="id"
             app:argType="integer" />
     </fragment>
+    <fragment
+        android:id="@+id/shareFragment"
+        android:name="com.shoppingapp.ShareFragment"
+        android:label="fragment_share"
+        tools:layout="@layout/fragment_share" />
 
 </navigation>

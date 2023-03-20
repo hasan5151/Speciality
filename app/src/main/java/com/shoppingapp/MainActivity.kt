@@ -52,19 +52,8 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-         binding.bottomNav.setOnItemSelectedListener { a->
-             if(a.itemId == R.id.shareFragment){
-                 val shareIntent = Intent()
-                 shareIntent.action = Intent.ACTION_SEND
-                 shareIntent.type="text/plain"
-                 shareIntent.putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=com.shoppingapp")
-                 startActivity(Intent.createChooser(shareIntent,getString(R.string.app_name)))
-
-             }
-             true
-
-         }
-
+      /*
+*/
         appBarConfiguration = AppBarConfiguration(navHostFragment.navController.graph)
 
         // val baslik = binding.navigationView.inflateHeaderView(R.layout.navigation_title)

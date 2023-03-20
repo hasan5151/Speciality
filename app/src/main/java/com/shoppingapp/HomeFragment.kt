@@ -113,6 +113,9 @@ class HomeFragment : Fragment() {
         addNewMeslek(MeslekModel(33, "Mühəndis fizikası"))
 
 
+        addMeslekDefinitoin(MeslekDefinationModel(1,"Komputer muhendisliyi", "dsvcvsdfvdsgvfsdfv"))
+
+
         auth = Firebase.auth
         if (auth.currentUser !== null) {
             database.getReference(auth.currentUser?.uid!!)
@@ -162,6 +165,11 @@ class HomeFragment : Fragment() {
     }
     fun addNewMeslek(meslek : MeslekModel){
         database.getReference("meslek").child(meslek.id.toString()).setValue(meslek)
+    }
+
+    fun addMeslekDefinitoin(definition: MeslekDefinationModel){
+        database.getReference("meslekdefinitions").child(definition.id.toString()).setValue(definition)
+
     }
 
 

@@ -31,6 +31,8 @@ class MeslekDefinition : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         database.getReference("meslekdefinitions").child("$meslekId").addListenerForSingleValueEvent(object  : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
+                val definition = snapshot.getValue(MeslekDefinationModel::class.java)
+                binding.meslekId.text = definition?.about.toString()
 
             }
 
