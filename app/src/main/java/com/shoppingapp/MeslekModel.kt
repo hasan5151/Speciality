@@ -8,5 +8,6 @@ data class MeslekModel(
 data class MeslekDefinationModel(
     val id : Int = 0,
     val name: String = "",
-    val about : String = ""
+    val about : String = "",
+    val logo : String = ""
 )

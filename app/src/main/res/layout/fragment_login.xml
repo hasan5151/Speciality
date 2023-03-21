@@ -28,7 +28,7 @@
                 android:layout_height="120dp"
                 android:layout_marginTop="20dp"
                 android:src="@drawable/baseline_person_24"
-                app:tint="@color/yellowLight" />
+                app:tint="@color/white" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayout"
@@ -85,7 +85,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:backgroundTint="@color/yellowLight"
+                    android:backgroundTint="@color/white"
                     android:elevation="10dp"
                     android:fontFamily="casual"
                     android:gravity="center|center_vertical"
@@ -108,7 +108,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginEnd="16dp"
-                    android:backgroundTint="@color/yellowLight"
+                    android:backgroundTint="@color/white"
                     android:fontFamily="casual"
                     android:text="@string/notLogin"
                     android:textAllCaps="false"
@@ -126,7 +126,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:backgroundTint="@color/yellowLight"
+                    android:backgroundTint="@color/white"
                     android:elevation="10dp"
                     android:fontFamily="casual"
                     android:gravity="center_horizontal"

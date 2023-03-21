@@ -37,10 +37,11 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:navigationIcon="@drawable/baseline_school_24"
+            app:navigationIconTint="@color/greenlight"
             app:subtitle="@string/xos"
-            app:subtitleTextColor="@color/yellow"
+            app:subtitleTextColor="@color/greenlight"
             app:title="@string/welcome"
-            app:titleTextColor="@color/yellow" />
+            app:titleTextColor="@color/greenlight" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNav"
@@ -49,8 +50,8 @@
             android:textAlignment="center"
             app:elevation="10dp"
             app:itemBackground="@color/main"
-            app:itemIconTint="@color/yellow"
-            app:itemTextColor="@color/yellow"
+            app:itemIconTint="@color/greenlight"
+            app:itemTextColor="@color/greenlight"
             app:labelVisibilityMode="labeled"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -65,7 +66,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="@color/yellowLight"
+        android:background="@color/greenlight"
         app:itemTextColor="@color/main"
         app:menu="@menu/toolbar_menu"
         android:visibility="gone"

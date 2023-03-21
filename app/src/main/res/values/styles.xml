@@ -12,10 +12,8 @@
     </style>
 
     <style name="newAlertStyle" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
-        <item name="android:background">
-
-            @color/yellowLight
-        </item>
+        <item name="android:background">@color/green
+                              </item>
 
     </style>
 </resources>

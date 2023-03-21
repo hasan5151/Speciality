@@ -121,6 +121,21 @@
         <action
             android:id="@+id/action_pointFragment_to_facultyFragment"
             app:destination="@id/facultyFragment" />
+        <action
+            android:id="@+id/action_pointFragment_to_thirdGroupFragment"
+            app:destination="@id/thirdGroupFragment" />
+        <action
+            android:id="@+id/action_pointFragment_to_fifthGroupFragment"
+            app:destination="@id/fifthGroupFragment" />
+        <action
+            android:id="@+id/action_pointFragment_to_fourthGroupFragment"
+            app:destination="@id/fourthGroupFragment" />
+        <action
+            android:id="@+id/action_pointFragment_to_firstGroupFragment"
+            app:destination="@id/firstGroupFragment" />
+        <action
+            android:id="@+id/action_pointFragment_to_secondGroupFragment"
+            app:destination="@id/secondGroupFragment" />
     </fragment>
     <fragment
         android:id="@+id/meslekDefinition"
@@ -135,5 +150,30 @@
         android:name="com.shoppingapp.ShareFragment"
         android:label="fragment_share"
         tools:layout="@layout/fragment_share" />
+    <fragment
+        android:id="@+id/fifthGroupFragment"
+        android:name="com.shoppingapp.FifthGroupFragment"
+        android:label="fragment_fifth_group"
+        tools:layout="@layout/fragment_fifth_group" />
+    <fragment
+        android:id="@+id/fourthGroupFragment"
+        android:name="com.shoppingapp.FourthGroupFragment"
+        android:label="fragment_fourth_group"
+        tools:layout="@layout/fragment_fourth_group" />
+    <fragment
+        android:id="@+id/firstGroupFragment"
+        android:name="com.shoppingapp.FirstGroupFragment"
+        android:label="fragment_first_group"
+        tools:layout="@layout/fragment_first_group" />
+    <fragment
+        android:id="@+id/secondGroupFragment"
+        android:name="com.shoppingapp.SecondGroupFragment"
+        android:label="fragment_second_group"
+        tools:layout="@layout/fragment_second_group" />
+    <fragment
+        android:id="@+id/thirdGroupFragment"
+        android:name="com.shoppingapp.ThirdGroupFragment"
+        android:label="fragment_third_group"
+        tools:layout="@layout/fragment_third_group" />
 
 </navigation>

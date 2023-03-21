@@ -12,6 +12,7 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.shoppingapp.databinding.FragmentMeslekDefinitionBinding
+import com.squareup.picasso.Picasso
 
 class MeslekDefinition : Fragment() {
     lateinit var binding : FragmentMeslekDefinitionBinding
@@ -29,11 +30,11 @@ class MeslekDefinition : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        database.getReference("meslekdefinitions").child("$meslekId").addListenerForSingleValueEvent(object  : ValueEventListener{
+        database.getReference("meslekdefinations").child("$meslekId").addListenerForSingleValueEvent(object  : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
-                val definition = snapshot.getValue(MeslekDefinationModel::class.java)
-                binding.meslekId.text = definition?.about.toString()
-
+                val defination = snapshot.getValue(MeslekDefinationModel::class.java)
+                binding.meslekId.text = defination?.about.toString()
+                Picasso.get().load("https://console.firebase.google.com/project/ixtisas-5c890/storage/ixtisas-5c890.appspot.com/files").into(binding.meslekImage);
             }
 
             override fun onCancelled(error: DatabaseError) {}

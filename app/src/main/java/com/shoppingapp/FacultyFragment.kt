@@ -13,10 +13,6 @@ class FacultyFragment : Fragment() {
     private var _binding: FragmentFacultyBinding? = null
     private val binding get() = _binding!!
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,7 +20,6 @@ class FacultyFragment : Fragment() {
     ): View? {
 
         _binding = FragmentFacultyBinding.inflate(inflater)
-
         return binding.root
     }
 
@@ -38,7 +33,7 @@ class FacultyFragment : Fragment() {
             }
 
             pointBtn.setOnClickListener {
-                val action = PointFragmentDirections.actionPointFragmentToFacultyFragment()
+                val action = FacultyFragmentDirections.actionFacultyFragmentToPointFragment()
                 findNavController().navigate(action)
             }
 

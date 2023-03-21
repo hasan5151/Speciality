@@ -13,7 +13,7 @@
         android:fontFamily="casual"
         android:gravity="center|center_horizontal|center_vertical"
         android:text="Hesabım"
-        android:textColor="@color/yellow"
+        android:textColor="@color/greenlight"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"

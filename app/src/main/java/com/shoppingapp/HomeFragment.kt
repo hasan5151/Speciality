@@ -49,12 +49,17 @@ class HomeFragment : Fragment() {
             UniversityModel(
                 2,
                 "https://firebasestorage.googleapis.com/v0/b/ixtisas-5c890.appspot.com/o/adnsu.png?alt=media&token=f22ed01a-ada2-482c-8512-56af2bde5387",
-                "Azərbaycan Dövlət Neft və Sənaye Universiteti"))
+                "Azərbaycan Dövlət Neft və Sənaye Universiteti"
+            )
+        )
 
-          addNewUni(
-              UniversityModel(3,
-                  "https://firebasestorage.googleapis.com/v0/b/ixtisas-5c890.appspot.com/o/unec.png?alt=media&token=e9e5997f-8ce3-4072-ac0c-2adcc6dbf2bd",
-                  "Azərbaycan Dövlət Iqtisad Universiteti"))
+        addNewUni(
+            UniversityModel(
+                3,
+                "https://firebasestorage.googleapis.com/v0/b/ixtisas-5c890.appspot.com/o/unec.png?alt=media&token=e9e5997f-8ce3-4072-ac0c-2adcc6dbf2bd",
+                "Azərbaycan Dövlət Iqtisad Universiteti"
+            )
+        )
 
         addNewUni(
             UniversityModel(
@@ -64,15 +69,21 @@ class HomeFragment : Fragment() {
             )
         )
 
-        addNewUni(UniversityModel(
-            5,
-            "https://firebasestorage.googleapis.com/v0/b/ixtisas-5c890.appspot.com/o/aztu.png?alt=media&token=e15e6c94-959e-4bfd-92dc-ea4153aae23a",
-            "Azərbaycan Texniki Universiteti"))
+        addNewUni(
+            UniversityModel(
+                5,
+                "https://firebasestorage.googleapis.com/v0/b/ixtisas-5c890.appspot.com/o/aztu.png?alt=media&token=e15e6c94-959e-4bfd-92dc-ea4153aae23a",
+                "Azərbaycan Texniki Universiteti"
+            )
+        )
 
-        addNewUni(UniversityModel(
-            6,
-            "https://firebasestorage.googleapis.com/v0/b/ixtisas-5c890.appspot.com/o/memarliq.png?alt=media&token=db550586-5b18-43a5-b9a7-7d396223cefd",
-            "Azərbaycan Memarlıq və İnşaat Universiteti"))
+        addNewUni(
+            UniversityModel(
+                6,
+                "https://firebasestorage.googleapis.com/v0/b/ixtisas-5c890.appspot.com/o/memarliq.png?alt=media&token=db550586-5b18-43a5-b9a7-7d396223cefd",
+                "Azərbaycan Memarlıq və İnşaat Universiteti"
+            )
+        )
 
 
         val faculty = FacultyModel(1, 1, "Komputer muhendisliyi", 650.0, 3000, true)
@@ -113,8 +124,14 @@ class HomeFragment : Fragment() {
         addNewMeslek(MeslekModel(33, "Mühəndis fizikası"))
 
 
-        addMeslekDefinitoin(MeslekDefinationModel(1,"Komputer muhendisliyi", "dsvcvsdfvdsgvfsdfv"))
-
+        addMeslekDefination(
+            MeslekDefinationModel(
+                1,
+                "Komputer muhendisliyi",
+                "Komputer mühəndisliyi - komputerin aparat və program təminatı ilə bağlı ixtisasdır. Daha çox komputerin arxitekturasını, komputer şəbəkələrini, qurğularını, onların iş prinsiplərini öyrənən  sahədir.",
+                "https://firebasestorage.googleapis.com/v0/b/ixtisas-5c890.appspot.com/o/hardvare.png?alt=media&token=93d0a7fd-08a1-4550-9fb8-3c3e8c6afa06"
+            )
+        )
 
         auth = Firebase.auth
         if (auth.currentUser !== null) {
@@ -125,9 +142,7 @@ class HomeFragment : Fragment() {
                     }
 
                     override fun onCancelled(error: DatabaseError) {
-
                     }
-
                 })
         }
 
@@ -163,12 +178,14 @@ class HomeFragment : Fragment() {
     fun addNewUni(university: UniversityModel) {
         database.getReference("university").child(university.id.toString()).setValue(university)
     }
-    fun addNewMeslek(meslek : MeslekModel){
+
+    fun addNewMeslek(meslek: MeslekModel) {
         database.getReference("meslek").child(meslek.id.toString()).setValue(meslek)
     }
 
-    fun addMeslekDefinitoin(definition: MeslekDefinationModel){
-        database.getReference("meslekdefinitions").child(definition.id.toString()).setValue(definition)
+    fun addMeslekDefination(defination: MeslekDefinationModel) {
+        database.getReference("meslekdefinations").child(defination.id.toString())
+            .setValue(defination)
 
     }
 

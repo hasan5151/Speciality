@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
 */
         appBarConfiguration = AppBarConfiguration(navHostFragment.navController.graph)
 
-        // val baslik = binding.navigationView.inflateHeaderView(R.layout.navigation_title)
+        val baslik = binding.navigationView.inflateHeaderView(R.layout.navigation_title)
         viewModel.name.observe(this) {
             binding.toolbar.subtitle = "Xoş gəldin $it"
 
