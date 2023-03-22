@@ -36,7 +36,6 @@ class FacultyFragment : Fragment() {
                 val action = FacultyFragmentDirections.actionFacultyFragmentToPointFragment()
                 findNavController().navigate(action)
             }
-
         }
     }
 

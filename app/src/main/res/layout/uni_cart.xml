@@ -42,7 +42,7 @@
                 android:paddingEnd="10dp"
                 android:paddingBottom="10dp"
                 android:text="@{meslek.name}"
-                android:textColor="@color/yellow"
+                android:textColor="@color/greenlight"
                 android:textSize="16sp"
                 android:textStyle="bold|italic"
                 app:layout_constraintBottom_toBottomOf="parent"

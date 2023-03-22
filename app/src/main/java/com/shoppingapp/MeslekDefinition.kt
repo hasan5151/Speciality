@@ -34,7 +34,7 @@ class MeslekDefinition : Fragment() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val defination = snapshot.getValue(MeslekDefinationModel::class.java)
                 binding.meslekId.text = defination?.about.toString()
-                Picasso.get().load("https://console.firebase.google.com/project/ixtisas-5c890/storage/ixtisas-5c890.appspot.com/files").into(binding.meslekImage);
+                Picasso.get().load(defination?.logo).into(binding.meslekImage);
             }
 
             override fun onCancelled(error: DatabaseError) {}

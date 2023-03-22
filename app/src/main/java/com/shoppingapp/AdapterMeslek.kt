@@ -14,7 +14,6 @@ class AdapterMeslek : RecyclerView.Adapter<AdapterMeslek.MeslekViewHolder>() {
         clickListener = listener
     }
 
-
     inner class MeslekViewHolder(val uniCartBinding: UniCartBinding) :
         RecyclerView.ViewHolder(uniCartBinding.root){
             fun bind(item: MeslekModel){

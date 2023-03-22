@@ -112,6 +112,9 @@
         <action
             android:id="@+id/action_allUniversityFragment_to_facultyFragment"
             app:destination="@id/facultyFragment" />
+        <action
+            android:id="@+id/action_allUniversityFragment_to_specialtyFragment"
+            app:destination="@id/specialtyFragment" />
     </fragment>
     <fragment
         android:id="@+id/pointFragment"
@@ -175,5 +178,10 @@
         android:name="com.shoppingapp.ThirdGroupFragment"
         android:label="fragment_third_group"
         tools:layout="@layout/fragment_third_group" />
+    <fragment
+        android:id="@+id/specialtyFragment"
+        android:name="com.shoppingapp.SpecialtyFragment"
+        android:label="fragment_specialty"
+        tools:layout="@layout/fragment_specialty" />
 
 </navigation>

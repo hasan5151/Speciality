@@ -30,7 +30,6 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var auth: FirebaseAuth
     private lateinit var database: FirebaseDatabase
-
     private val viewModel by activityViewModels<MainViewModel>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -40,53 +39,243 @@ class HomeFragment : Fragment() {
         addNewUni(
             UniversityModel(
                 1,
-                "https://firebasestorage.googleapis.com/v0/b/ixtisas-5c890.appspot.com/o/bdulogo.png?alt=media&token=abebbd67-5a17-4fc8-90cc-0a835b9c37b2",
                 "Bakı Dovlət Universiteti"
             )
         )
-
         addNewUni(
             UniversityModel(
                 2,
-                "https://firebasestorage.googleapis.com/v0/b/ixtisas-5c890.appspot.com/o/adnsu.png?alt=media&token=f22ed01a-ada2-482c-8512-56af2bde5387",
                 "Azərbaycan Dövlət Neft və Sənaye Universiteti"
             )
         )
-
         addNewUni(
             UniversityModel(
                 3,
-                "https://firebasestorage.googleapis.com/v0/b/ixtisas-5c890.appspot.com/o/unec.png?alt=media&token=e9e5997f-8ce3-4072-ac0c-2adcc6dbf2bd",
-                "Azərbaycan Dövlət Iqtisad Universiteti"
-            )
-        )
-
-        addNewUni(
-            UniversityModel(
-                4,
-                "https://firebasestorage.googleapis.com/v0/b/ixtisas-5c890.appspot.com/o/tibb%20png.jpg?alt=media&token=9d3c4e2b-d432-402f-8725-ccc85b5194c7",
-                "Azərbaycan Tibb Universiteti"
-            )
-        )
-
-        addNewUni(
-            UniversityModel(
-                5,
-                "https://firebasestorage.googleapis.com/v0/b/ixtisas-5c890.appspot.com/o/aztu.png?alt=media&token=e15e6c94-959e-4bfd-92dc-ea4153aae23a",
                 "Azərbaycan Texniki Universiteti"
             )
         )
-
+        addNewUni(
+            UniversityModel(
+                4,
+                "Memarlıq və İnşaat Universiteti"
+            )
+        )
+        addNewUni(
+            UniversityModel(
+                5,
+                "Azərbaycan Dövlət Pedaqoji Universiteti"
+            )
+        )
         addNewUni(
             UniversityModel(
                 6,
-                "https://firebasestorage.googleapis.com/v0/b/ixtisas-5c890.appspot.com/o/memarliq.png?alt=media&token=db550586-5b18-43a5-b9a7-7d396223cefd",
-                "Azərbaycan Memarlıq və İnşaat Universiteti"
+                "Azərbaycan Dövlət İqtisad Universiteti"
+            )
+        )
+        addNewUni(UniversityModel(
+            7,
+            "Bakı Mühəndislik Universiteti"
+        ))
+        addNewUni(
+            UniversityModel(
+                8,
+                "Azərbaycan Respublikası Prezidenti yanında Dövlət İdarəçilik Akademiyası"
+            )
+        )
+        addNewUni(
+            UniversityModel(
+                9,
+                "ADA universiteti"
+            )
+        )
+        addNewUni(
+            UniversityModel(
+            10,
+                "Azərbaycan Dövlət Rəssamlıq Akademiyası"
+            )
+        )
+        addNewUni(
+            UniversityModel(
+                11,
+                "Milli Aviasiya Akademiyası"
+            )
+        )
+        addNewUni(
+            UniversityModel(
+                12,
+                "Azərbaycan Turizm və Menecment Ubiversiteti"
+            )
+        )
+        addNewUni(
+            UniversityModel(
+                13,
+                "Azərbaycan Dövlət Dəniz Akademiyası"
+            )
+        )
+        addNewUni(
+            UniversityModel(
+                14,
+                "Bakı Ali Neft Məktəbi"
+            )
+        )
+        addNewUni(
+            UniversityModel(
+                15,
+                "Azərbaycan Respublikasının Dövlət Gömrük Komitəsinin Akademiyası"
+            )
+        )
+        addNewUni(
+            UniversityModel(
+                16,
+                "Naxçıvan Dövlət Universiteti"
+            )
+        )
+        addNewUni(
+            UniversityModel(
+                17,
+                "Azərbaycan Dövlət Aqrar Universiteti (Gəncə şəhəri)"
+            )
+        )
+        addNewUni(
+            UniversityModel(
+                18,
+                "Gəncə Dövlət Univeristeti"
+            )
+        )
+        addNewUni(
+            UniversityModel(
+                19,
+                "Azərcaycan Texnologiya Universiteti(Gəncə şəhəri)"
+            )
+        )
+        addNewUni(
+            UniversityModel(
+                20,
+                "Sumqayıt Dövlət Univeristeti"
+            )
+        )
+        addNewUni(
+            UniversityModel(
+                21,
+                "Mingəçevir Dövlət Universiteti"
+            )
+        )
+        addNewUni(
+            UniversityModel(
+                22,
+                "Lənkəran Dövlət Universiteti"
+            )
+        )
+        addNewUni(
+            UniversityModel(
+                23,
+                "Azərbaycan Koorperasiya Univeristeti"
+            )
+        )
+        addNewUni(
+            UniversityModel(
+                24,
+                "Azərbaycan Universiteti"
+            )
+        )
+        addNewUni(
+            UniversityModel(
+                25,
+                "Qərbi Kaspi Universiteti"
+            )
+        )
+        addNewUni(
+            UniversityModel(
+                26,
+                "Xəzər Universiteti"
+            )
+        )
+        addNewUni(
+            UniversityModel(
+                27,
+                "Bakı Avrasiya Universiteti"
+            )
+        )
+        addNewUni(
+            UniversityModel(
+                28,
+                "Bakı Qızlar Universiteti"
+            )
+        )
+        addNewUni(
+            UniversityModel(
+                29,
+                "Naxçıvan Universiteti"
+            )
+        )
+        addNewUni(
+            UniversityModel(
+                30,
+                "Azərbaycan Dövlət Mədəniyyət və İncəsənət Universiteti"
+            )
+        )
+        addNewUni(
+            UniversityModel(
+                31,
+                "Azərbaycan Dövlət Bədən Tərbiyəsi və İdman Akademiyası"
+            )
+        )
+        addNewUni(
+            UniversityModel(
+                32,
+                "Odlar Yurdu Universiteti"
+            )
+        )
+        addNewUni(
+            UniversityModel(
+                33,
+                "Bakı Biznes Universiteti"
+            )
+        )
+        addNewUni(
+            UniversityModel(
+                34,
+                "Azərbaycan Əmək və Sosial Münasibətlər Akademiyası"
+            )
+        )
+        addNewUni(
+            UniversityModel(
+                35,
+                "Azərbaycan Dillər Universiteti"
+            )
+        )
+        addNewUni(
+            UniversityModel(
+                36,
+                "Bakı Slavyan Universiteti"
+            )
+        )
+        addNewUni(
+            UniversityModel(
+                37,
+                "Azərbaycan İlahiyyət İnstitutu"
+            )
+        )
+        addNewUni(
+            UniversityModel(
+                38,
+                "Azərbaycan Tibb Universiteti"
+            )
+        )
+        addNewUni(
+            UniversityModel(
+                39,
+                "Bakı Musiqi Akademiyası"
+            )
+        )
+        addNewUni(
+            UniversityModel(
+                40,
+                "Bakı Xoreoqrafiya Akademiyası"
             )
         )
 
-
-        val faculty = FacultyModel(1, 1, "Komputer muhendisliyi", 650.0, 3000, true)
+        val faculty = FacultyModel(1,1, "Komputer muhendisliyi", 650.0, 3000, true)
         database.getReference("faculty").child(faculty.id.toString()).setValue(faculty)
 
         addNewMeslek(MeslekModel(1, "Komputer mühəndisliyi"))
@@ -107,21 +296,6 @@ class HomeFragment : Fragment() {
         addNewMeslek(MeslekModel(16, "Həyat fəaliyyətinin təhlükəsizliyi mühəndisi"))
         addNewMeslek(MeslekModel(17, "İnformasiya texnologiyaları"))
         addNewMeslek(MeslekModel(18, "Mühəndis fizikası"))
-        addNewMeslek(MeslekModel(19, "Mühəndis fizikası"))
-        addNewMeslek(MeslekModel(20, "Mühəndis fizikası"))
-        addNewMeslek(MeslekModel(21, "Mühəndis fizikası"))
-        addNewMeslek(MeslekModel(22, "Mühəndis fizikası"))
-        addNewMeslek(MeslekModel(23, "Mühəndis fizikası"))
-        addNewMeslek(MeslekModel(24, "Mühəndis fizikası"))
-        addNewMeslek(MeslekModel(25, "Mühəndis fizikası"))
-        addNewMeslek(MeslekModel(26, "Mühəndis fizikası"))
-        addNewMeslek(MeslekModel(27, "Mühəndis fizikası"))
-        addNewMeslek(MeslekModel(28, "Mühəndis fizikası"))
-        addNewMeslek(MeslekModel(29, "Mühəndis fizikası"))
-        addNewMeslek(MeslekModel(30, "Mühəndis fizikası"))
-        addNewMeslek(MeslekModel(31, "Mühəndis fizikası"))
-        addNewMeslek(MeslekModel(32, "Mühəndis fizikası"))
-        addNewMeslek(MeslekModel(33, "Mühəndis fizikası"))
 
 
         addMeslekDefination(
@@ -129,7 +303,16 @@ class HomeFragment : Fragment() {
                 1,
                 "Komputer muhendisliyi",
                 "Komputer mühəndisliyi - komputerin aparat və program təminatı ilə bağlı ixtisasdır. Daha çox komputerin arxitekturasını, komputer şəbəkələrini, qurğularını, onların iş prinsiplərini öyrənən  sahədir.",
-                "https://firebasestorage.googleapis.com/v0/b/ixtisas-5c890.appspot.com/o/hardvare.png?alt=media&token=93d0a7fd-08a1-4550-9fb8-3c3e8c6afa06"
+                "https://firebasestorage.googleapis.com/v0/b/ixtisas-5c890.appspot.com/o/hardware%20dev.png?alt=media&token=5d70f2ed-cb8f-4753-9155-0ee5db65cb3d"
+            )
+        )
+
+        addAllUni(
+            PointModel(
+                1,
+                1,
+                1,
+                1
             )
         )
 
@@ -140,7 +323,6 @@ class HomeFragment : Fragment() {
                     override fun onDataChange(snapshot: DataSnapshot) {
                         viewModel.onSetname("${snapshot.value}")
                     }
-
                     override fun onCancelled(error: DatabaseError) {
                     }
                 })
@@ -166,8 +348,6 @@ class HomeFragment : Fragment() {
 
         // Inflate the layout for this fragment
         return binding.root
-
-
     }
 
     override fun onDestroy() {
@@ -186,6 +366,11 @@ class HomeFragment : Fragment() {
     fun addMeslekDefination(defination: MeslekDefinationModel) {
         database.getReference("meslekdefinations").child(defination.id.toString())
             .setValue(defination)
+    }
+
+    fun addAllUni(allUniversity: PointModel) {
+        database.getReference("allUni").child(allUniversity.groupId.toString())
+            .setValue(allUniversity)
 
     }
 
