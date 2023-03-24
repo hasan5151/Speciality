@@ -5,9 +5,8 @@
     android:id="@+id/telimatFragment"
     style="@style/telimatPage"
     android:background="@color/main"
-    tools:context=".TelimatFragment"
 
-    >
+    tools:context=".TelimatFragment">
 
     <ImageView
         android:id="@+id/iconokul"
@@ -18,7 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/greenlight" />
+        app:tint="@color/green" />
 
     <ScrollView
         android:layout_width="0dp"
@@ -51,7 +50,7 @@
                 android:paddingBottom="10dp"
                 android:text="@string/about"
                 android:textAlignment="center"
-                android:textColor="@color/greenlight"
+                android:textColor="@color/green"
                 android:textSize="16sp" />
 
             <ImageView
@@ -59,7 +58,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:src="@drawable/iconschool"
-                app:tint="@color/greenlight" />
+                app:tint="@color/green" />
 
 
         </LinearLayout>

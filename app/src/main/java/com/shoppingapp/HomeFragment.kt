@@ -39,7 +39,7 @@ class HomeFragment : Fragment() {
         addNewUni(
             UniversityModel(
                 1,
-                "Bakı Dovlət Universiteti"
+                "Bakı Dövlət Universiteti"
             )
         )
         addNewUni(
@@ -72,10 +72,12 @@ class HomeFragment : Fragment() {
                 "Azərbaycan Dövlət İqtisad Universiteti"
             )
         )
-        addNewUni(UniversityModel(
-            7,
-            "Bakı Mühəndislik Universiteti"
-        ))
+        addNewUni(
+            UniversityModel(
+                7,
+                "Bakı Mühəndislik Universiteti"
+            )
+        )
         addNewUni(
             UniversityModel(
                 8,
@@ -90,7 +92,7 @@ class HomeFragment : Fragment() {
         )
         addNewUni(
             UniversityModel(
-            10,
+                10,
                 "Azərbaycan Dövlət Rəssamlıq Akademiyası"
             )
         )
@@ -103,7 +105,7 @@ class HomeFragment : Fragment() {
         addNewUni(
             UniversityModel(
                 12,
-                "Azərbaycan Turizm və Menecment Ubiversiteti"
+                "Azərbaycan Turizm və Menecment Universiteti"
             )
         )
         addNewUni(
@@ -139,7 +141,7 @@ class HomeFragment : Fragment() {
         addNewUni(
             UniversityModel(
                 18,
-                "Gəncə Dövlət Univeristeti"
+                "Gəncə Dövlət Universiteti"
             )
         )
         addNewUni(
@@ -151,7 +153,7 @@ class HomeFragment : Fragment() {
         addNewUni(
             UniversityModel(
                 20,
-                "Sumqayıt Dövlət Univeristeti"
+                "Sumqayıt Dövlət Universiteti"
             )
         )
         addNewUni(
@@ -169,7 +171,7 @@ class HomeFragment : Fragment() {
         addNewUni(
             UniversityModel(
                 23,
-                "Azərbaycan Koorperasiya Univeristeti"
+                "Azərbaycan Koorperasiya Universiteti"
             )
         )
         addNewUni(
@@ -275,8 +277,6 @@ class HomeFragment : Fragment() {
             )
         )
 
-        val faculty = FacultyModel(1,1, "Komputer muhendisliyi", 650.0, 3000, true)
-        database.getReference("faculty").child(faculty.id.toString()).setValue(faculty)
 
         addNewMeslek(MeslekModel(1, "Komputer mühəndisliyi"))
         addNewMeslek(MeslekModel(2, "Komputer elmləri"))
@@ -302,8 +302,17 @@ class HomeFragment : Fragment() {
             MeslekDefinationModel(
                 1,
                 "Komputer muhendisliyi",
-                "Komputer mühəndisliyi - komputerin aparat və program təminatı ilə bağlı ixtisasdır. Daha çox komputerin arxitekturasını, komputer şəbəkələrini, qurğularını, onların iş prinsiplərini öyrənən  sahədir.",
-                "https://firebasestorage.googleapis.com/v0/b/ixtisas-5c890.appspot.com/o/hardware%20dev.png?alt=media&token=5d70f2ed-cb8f-4753-9155-0ee5db65cb3d"
+                "Komputer mühəndisliyi - komputerin aparat və program təminatı ilə bağlı ixtisasdır. Daha çox komputerin arxitekturasını, komputer şəbəkələrini, qurğularını, onların iş prinsiplərini öyrənən  sahədir. Bu ixtisasın məzunları həm yerli, həm xarici əmək bazarında çox rahatlıqla iş tapa bilirlər.",
+                "https://firebasestorage.googleapis.com/v0/b/ixtisas-5c890.appspot.com/o/hardvare.png?alt=media&token=e900e1a5-e4fd-469e-9bda-be6f25317460"
+            )
+        )
+
+        addMeslekDefination(
+            MeslekDefinationModel(
+                2,
+                "Komputer elmləri",
+                "Kompüter elmləri həm kompüter qurğularının, həm də proqram dizaynının öyrənilməsidir. O, həm nəzəri alqoritmlərin öyrənilməsini, həm də onların kompüter avadanlıqları və proqram təminatı vasitəsilə həyata keçirilməsi ilə bağlı praktiki problemləri əhatə edir. Kompüter elmlərinin öyrənilməsi süni intellekt, proqram təminatı mühəndisliyi(software engineering), proqramlaşdırma və kompüter qrafikası da daxil olmaqla bir çox sahəsi vardır. Hazırki dünyamızda kifayət qədər tələbat olan ixtisasdır",
+                "https://firebasestorage.googleapis.com/v0/b/ixtisas-5c890.appspot.com/o/dev.png?alt=media&token=ce4a604a-602a-4fc1-8e1a-61cac68d74ec"
             )
         )
 
@@ -316,27 +325,406 @@ class HomeFragment : Fragment() {
             )
         )
 
+        addNewFaculty(
+            FacultyModel(
+                1,
+                1,
+                "Fizika müəllimliyi",
+                389.2,
+                389.2,
+                2000,
+                true
+
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                2,
+                1,
+                "Fizika müəllimliyi (tədris ingilis dilində)",
+                419.8,
+                419.8,
+                2000,
+                true
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                3,
+                1,
+                "İnformatika müəllimliyi",
+                348.3,
+                344.4,
+                2000,
+                true
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                4,
+                1,
+                "Riyaziyyat müəllimliyi",
+                537.8,
+                537.8,
+                2000,
+                true
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                5,
+                1,
+                "Riyaziyyat müəllimliyi (tədris ingilis dilində)",
+                619.1,
+                619.1,
+                2000,
+                true
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                6,
+                1,
+                "Fizika",
+                328.4,
+                328.4,
+                1900,
+                true
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                7,
+                1,
+                "Fizika (tədris ingilis dilində)",
+                336.4,
+                336.4,
+                1900,
+                true
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                8,
+                1,
+                "Geologiya",
+                256.2,
+                256.2,
+                1900,
+                true
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                9,
+                1,
+                "Komputer elmləri",
+                489.6,
+                489.6,
+                2000,
+                true
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                10,
+                1,
+                "Komputer elmləri",
+                480.5,
+                250.0,
+                1600,
+                false
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                11,
+                1,
+                "Komputer elmləri (tədris ingilis dilində)",
+                480.5,
+                250.0,
+                2000,
+                true
+            )
+        )
+
+        addNewFaculty(
+            FacultyModel(
+                12,
+                1,
+                "Mexanika",
+                303.4,
+                219.8,
+                1900,
+                true
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                13,
+                1,
+                "Riyaziyyat",
+                375.8,
+                375.8,
+                1900,
+                true
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                14,
+                1,
+                "Riyaziyyat (tədris ingilis dilində)",
+                431.4,
+                431.4,
+                1900,
+                true
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                15,
+                1,
+                "Geologiya və geofizika mühəndisliyi",
+                267.7,
+                267.7,
+                1900,
+                true
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                16,
+                1,
+                "Geologiya və geofizika mühəndisliyi",
+                291.9,
+                200.0,
+                1600,
+                false
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                17,
+                1,
+                "Geologiya və geofizika mühəndisliyi (tədris ingilis dilində)",
+                262.5,
+                200.0,
+                1900,
+                true
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                18,
+                1,
+                "Geomatika və geodeziya mühəndisliyi",
+                251.6,
+                251.6,
+                2000,
+                true
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                19,
+                1,
+                "Geomatika və geodeziya mühəndisliyi",
+                0.0,
+                200.0,
+                1600,
+                false
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                19,
+                1,
+                "İnformasiya təhlükəsizliyi",
+                545.8,
+                545.8,
+                2100,
+                true
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                20,
+                1,
+                "Kimya mühəndisliyi",
+                413.3,
+                413.3,
+                2000,
+                true
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                21,
+                1,
+                "Mədən mühəndisliyi",
+                264.3,
+                200.0,
+                1900,
+                true
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                22,
+                1,
+                "Mühəndis fizikası",
+                273.2,
+                273.2,
+                2000,
+                true
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                22,
+                1,
+                "Qida mühəndisliyi",
+                327.8,
+                327.8,
+                2100,
+                true
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                22,
+                1,
+                "Qida mühəndisliyi",
+                327.8,
+                327.8,
+                2100,
+                true
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                23,
+                1,
+                "Torpaqşunaslıq və aqrokimya",
+                266.2,
+                266.2,
+                2100,
+                true
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                24,
+                1,
+                "Torpaqşunaslıq və aqrokimya",
+                229.7,
+                228.4,
+                1700,
+                false
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                25,
+                1,
+                "Yer quruluşu və daşınmaz əmlakın kadastrı",
+                303.4,
+                303.4,
+                2100,
+                true
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                26,
+                1,
+                "Yer quruluşu və daşınmaz əmlakın kadastrı",
+                257.6,
+                226.3,
+                1700,
+                false
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                27,
+                1,
+                "Yer quruluşu və daşınmaz əmlakın kadastrı",
+                257.6,
+                226.3,
+                1700,
+                false
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                28,
+                1,
+                "Fizika müəllimliyi (Qazax filialı)",
+                387.3,
+                215.1,
+                1400,
+                true
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                29,
+                1,
+                "İnformatika müəllimliyi (Qazax filialı)",
+                356.8,
+                203.1,
+                1400,
+                true
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                30,
+                1,
+                "Riyaziyyat müəllimliyi (Qazax filialı)",
+                498.9,
+                244.0,
+                1400,
+                true
+            )
+        )
+        addNewFaculty(
+                FacultyModel(
+                    31,
+                    1,
+                    "Riyaziyyat və informatika müəllimliyi (Qazax filialı)",
+                    396.3,
+                    291.3,
+                    1400,
+                    true
+                )
+                )
+
+
         auth = Firebase.auth
-        if (auth.currentUser !== null) {
-            database.getReference(auth.currentUser?.uid!!)
-                .addListenerForSingleValueEvent(object : ValueEventListener {
-                    override fun onDataChange(snapshot: DataSnapshot) {
-                        viewModel.onSetname("${snapshot.value}")
-                    }
-                    override fun onCancelled(error: DatabaseError) {
-                    }
-                })
-        }
+                    if (auth.currentUser !== null) {
+                        database.getReference(auth.currentUser?.uid!!)
+                            .addListenerForSingleValueEvent(object : ValueEventListener {
+                                override fun onDataChange(snapshot: DataSnapshot) {
+                                    viewModel.onSetname("${snapshot.value}")
+                                }
 
-        binding.sinif1011.setOnClickListener {
-            val action = HomeFragmentDirections.actionHomeFragmentToTenElevenFragment()
-            Navigation.findNavController(it).navigate(action)
-        }
+                                override fun onCancelled(error: DatabaseError) {
+                                }
+                            })
+                    }
 
-        binding.sinif89.setOnClickListener {
-            val action = HomeFragmentDirections.actionHomeFragmentToEightNineGradeFragment()
-            Navigation.findNavController(it).navigate(action)
-        }
+                    binding . sinif1011 . setOnClickListener {
+                val action = HomeFragmentDirections.actionHomeFragmentToTenElevenFragment()
+                Navigation.findNavController(it).navigate(action)
+            }
+
+                    binding . sinif89 . setOnClickListener {
+                val action = HomeFragmentDirections.actionHomeFragmentToEightNineGradeFragment()
+                Navigation.findNavController(it).navigate(action)
+            }
     }
 
     override fun onCreateView(
@@ -372,6 +760,11 @@ class HomeFragment : Fragment() {
         database.getReference("allUni").child(allUniversity.groupId.toString())
             .setValue(allUniversity)
 
+    }
+
+    fun addNewFaculty(faculty: FacultyModel) {
+        database.getReference("faculty").child(faculty.id.toString())
+            .setValue(faculty)
     }
 
 

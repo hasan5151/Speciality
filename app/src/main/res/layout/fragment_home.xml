@@ -5,7 +5,7 @@
     android:id="@+id/home"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/greenlight"
+    android:background="@color/green"
     android:textAlignment="textEnd"
     app:layout_constraintStart_toEndOf="parent"
     tools:context=".HomeFragment">
@@ -81,7 +81,7 @@
                 android:paddingBottom="15dp"
                 android:text="@string/sec"
                 android:textAlignment="center"
-                android:textColor="@color/greenlight"
+                android:textColor="@color/green"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -102,7 +102,7 @@
         android:paddingBottom="30dp"
         android:text="@string/sinif89"
         android:textAllCaps="false"
-        android:textColor="@color/greenlight"
+        android:textColor="@color/green"
         android:textSize="20sp"
         app:cornerRadius="20dp"
         app:elevation="10dp"
@@ -126,7 +126,7 @@
         android:paddingBottom="30dp"
         android:text="@string/sinif1011"
         android:textAllCaps="false"
-        android:textColor="@color/greenlight"
+        android:textColor="@color/green"
         android:textSize="20sp"
         app:cornerRadius="20dp"
         app:elevation="10dp"

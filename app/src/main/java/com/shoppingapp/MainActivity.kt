@@ -45,15 +45,7 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNav.setupWithNavController(navHostFragment.navController)
         binding.navigationView.setupWithNavController(navHostFragment.navController)
 
-        navHostFragment.navController.addOnDestinationChangedListener { controller, destination, arguments ->
-            destinationId = destination.id
-            if (destination.id == R.id.exitFragment) {
 
-            }
-        }
-
-      /*
-*/
         appBarConfiguration = AppBarConfiguration(navHostFragment.navController.graph)
 
         val baslik = binding.navigationView.inflateHeaderView(R.layout.navigation_title)

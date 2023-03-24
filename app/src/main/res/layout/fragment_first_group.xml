@@ -7,12 +7,13 @@
     tools:context=".FirstGroupFragment">
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout7"
         android:layout_width="match_parent"
-               android:layout_height="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:textColorHint="@color/yellowLight"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:textColorHint="@color/green"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -24,5 +25,29 @@
             android:backgroundTint="@color/main"
             android:fontFamily="casual"
             android:hint="@string/bal" />
+
     </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/enterBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center|center_horizontal"
+        android:text="Daxil Et"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout7"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout7"
+        tools:layout_editor_absoluteY="74dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="409dp"
+        android:layout_height="535dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enterBtn" />
 </androidx.constraintlayout.widget.ConstraintLayout>

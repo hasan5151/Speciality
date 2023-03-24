@@ -55,7 +55,7 @@ class AllUniversityFragment : Fragment() {
         })
 
         universityAdapter.onClickListener {
-            val navigate = AllUniversityFragmentDirections.actionAllUniversityFragmentToSpecialtyFragment()
+            val navigate = AllUniversityFragmentDirections.actionAllUniversityFragmentToSpecialtyFragment(id)
             findNavController().navigate(navigate)
         }
     }
@@ -68,8 +68,4 @@ class AllUniversityFragment : Fragment() {
 
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null!!
-    }
-}
+   }

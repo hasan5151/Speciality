@@ -182,6 +182,10 @@
         android:id="@+id/specialtyFragment"
         android:name="com.shoppingapp.SpecialtyFragment"
         android:label="fragment_specialty"
-        tools:layout="@layout/fragment_specialty" />
+        tools:layout="@layout/fragment_specialty" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
 
 </navigation>

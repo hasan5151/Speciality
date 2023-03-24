@@ -5,10 +5,8 @@
     <color name="light">#356E70</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="green">#208A18</color>
-    <color name="greenlight">#5ADC50</color>
-    <color name="yellowLight">#ACB400</color>
-    <color name="yellow">#FFFF00</color>
+    <color name="green">#B8BD85</color>
+
 
     <color name = "blackLight">#232323</color>
 </resources>
