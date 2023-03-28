@@ -1,59 +1,114 @@
 package com.shoppingapp
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.database.*
+import com.google.firebase.database.ktx.database
+import com.google.firebase.database.ktx.getValue
+import com.google.firebase.ktx.Firebase
+import com.shoppingapp.databinding.FragmentFirstGroupBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [FirstGroupFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class FirstGroupFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var binding : FragmentFirstGroupBinding
+    private val universityAdapter: AdapterUniversity = AdapterUniversity()
+    private lateinit var database: FirebaseDatabase
+    private val universityList = arrayListOf<UniversityModel>()
+    private var point : Double = 0.0
+    private val uniIdList  = hashSetOf<Int>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_first_group, container, false)
+
+        binding = FragmentFirstGroupBinding.inflate(layoutInflater)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment FirstGroupFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            FirstGroupFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+
+    setRw()
+        database = Firebase.database
+     binding.enterBtn.setOnClickListener {
+
+         try {
+             point = binding.yourPoint.text.toString().toDouble()
+             universityList.clear()
+             database.getReference("faculty").orderByChild("nonDsPoint").startAt(point)
+                 .addChildEventListener(object : ChildEventListener {
+                     override fun onChildAdded(dataSnapshot: DataSnapshot, prevChildKey: String?) {
+                         Log.e("point","onchildadded")
+                         val facultyModel  = dataSnapshot.getValue<FacultyModel>()
+                         if (facultyModel != null) {
+                             if(!uniIdList.contains(facultyModel.uniId)){
+                                 uniIdList.add(facultyModel.uniId!!)
+                                 getUniversity()
+                             }
+                         }
+
+                     } // ...
+
+                     override fun onChildChanged(snapshot: DataSnapshot, previousChildName: String?) {
+                     }
+
+                     override fun onChildRemoved(snapshot: DataSnapshot) {
+                     }
+
+                     override fun onChildMoved(snapshot: DataSnapshot, previousChildName: String?) {
+                     }
+
+                     override fun onCancelled(error: DatabaseError) {
+                     }
+                 })
+
+         }
+         catch (e:java.lang.NumberFormatException){
+             e.printStackTrace()
+         }
+
+             }
+
+
+
+    universityAdapter.onClickListener {
+       // val navigate = FirstGroupFragmentDirections
+      //  findNavController().navigate(navigate)
     }
+}
+fun setRw() {
+    with(binding.FirstGroupRecyclerView) {
+        layoutManager = LinearLayoutManager(requireContext())
+        setHasFixedSize(true)
+        adapter = universityAdapter
+    }
+
+}
+    fun getUniversity(){
+        uniIdList.distinct().forEach {
+
+            database.getReference("university").child(it.toString()).addListenerForSingleValueEvent(object:ValueEventListener{
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    val universityModel = snapshot.getValue<UniversityModel>()
+                    if (universityModel != null) {
+                        universityList.add(universityModel)
+                    }
+                    universityAdapter.updateList(universityList)
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+
+                }
+
+            } )
+        }
+    }
+
 }

@@ -172,7 +172,11 @@
         android:id="@+id/secondGroupFragment"
         android:name="com.shoppingapp.SecondGroupFragment"
         android:label="fragment_second_group"
-        tools:layout="@layout/fragment_second_group" />
+        tools:layout="@layout/fragment_second_group" >
+        <action
+            android:id="@+id/action_secondGroupFragment_to_firstGroupPointFragment"
+            app:destination="@id/firstGroupPointFragment" />
+    </fragment>
     <fragment
         android:id="@+id/thirdGroupFragment"
         android:name="com.shoppingapp.ThirdGroupFragment"
@@ -187,5 +191,10 @@
             android:name="id"
             app:argType="integer" />
     </fragment>
+    <fragment
+        android:id="@+id/firstGroupPointFragment"
+        android:name="com.shoppingapp.FirstGroupPointFragment"
+        android:label="fragment_first_group_point"
+        tools:layout="@layout/fragment_first_group_point" />
 
 </navigation>

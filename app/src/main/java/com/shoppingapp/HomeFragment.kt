@@ -1,19 +1,13 @@
 package com.shoppingapp
 
-import android.content.Context
-import android.content.SharedPreferences
+import android.annotation.SuppressLint
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.ViewModel
 import androidx.navigation.Navigation
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DataSnapshot
@@ -32,6 +26,7 @@ class HomeFragment : Fragment() {
     private lateinit var database: FirebaseDatabase
     private val viewModel by activityViewModels<MainViewModel>()
 
+    @SuppressLint("SuspiciousIndentation")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         database = Firebase.database
@@ -691,20 +686,218 @@ class HomeFragment : Fragment() {
             )
         )
         addNewFaculty(
+            FacultyModel(
+                31,
+                1,
+                "Riyaziyyat və informatika müəllimliyi (Qazax filialı)",
+                396.3,
+                291.3,
+                1400,
+                true
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                32,
+                1,
+                "Coğrafiya müəllimliyi",
+                297.9,
+                274.7,
+                2000,
+                true
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                33,
+                1,
+                "Sosiologiya",
+                284.9,
+                284.9,
+                2000,
+                true
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                33,
+                1,
+                "Sosiologiya (tədris ingilis dilində)",
+                285.0,
+                285.0,
+                2100,
+                true
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                34,
+                1,
+                "Beynəlxalq ticarət və logistika",
+                367.9,
+                243.3,
+                3000,
+                true
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                35,
+                1,
+                "Beynəlxalq ticarət və logistika",
+                0.0,
+                269.2,
+                3000,
+                true
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                36,
+                1,
+                "Davamlı inkişafın idarə edilməsi",
+                316.8,
+                316.8,
+                2500,
+                true
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                37,
+                1,
+                "İqtisadiyyat",
+                316.8,
+                316.8,
+                3000,
+                true
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                38,
+                1,
+                "İqtisadiyyat",
+                200.0,
+                0.0,
+                2400,
+                false
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                39,
+                1,
+                "İqtisadiyyat (tədris ingilis dilində)",
+                381.1,
+                382.1,
+                2400,
+                false
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                40,
+                1,
+                "Maliyyə",
+                474.6,
+                321.6,
+                3000,
+                true
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                41,
+                1,
+                "Menecment",
+                343.4,
+                227.5,
+                3000,
+                true
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                42,
+                1,
+                "Coğrafiya",
+                270.2,
+                228.3,
+                1900,
+                true
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                43,
+                1,
+                "Hidrometeorologiya",
+                259.9,
+                200.0,
+                1900,
+                true
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                44,
+                1,
+                "Turizm işinin təşkili",
+                300.2,
+                300.2,
+                2200,
+                true
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                45,
+                1,
+                "Tarix və Coğrafiya müəllimliyi (Qazax filialı)",
+                0.0,
+                200.0,
+                1400,
+                true
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                46,
+                1,
+                "Turizm işinin təşkili (Qazax filialı)",
+                200.2,
+                171.5,
+                1500,
+                true
+            )
+        )
+        addNewFaculty(
+            FacultyModel(
+                47,
+                1,
+                "Turizm işinin təşkili (Qazax filialı)",
+                234.0,
+                150.0,
+                1200,
+                false
+            )
+        )
+        addNewFaculty(
                 FacultyModel(
-                    31,
-                    1,
-                    "Riyaziyyat və informatika müəllimliyi (Qazax filialı)",
-                    396.3,
-                    291.3,
-                    1400,
+                    48,
+                    2,
+                    "Beynəlxalq ticarət və logistika",
+                    234.0,
+                    150.0,
+                    2300,
                     true
                 )
                 )
 
-
         auth = Firebase.auth
-                    if (auth.currentUser !== null) {
+
+            if (auth.currentUser!== null) {
                         database.getReference(auth.currentUser?.uid!!)
                             .addListenerForSingleValueEvent(object : ValueEventListener {
                                 override fun onDataChange(snapshot: DataSnapshot) {

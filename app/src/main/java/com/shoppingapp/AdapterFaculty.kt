@@ -18,13 +18,12 @@ class AdapterFaculty : RecyclerView.Adapter<AdapterFaculty.FacultyViewHolder>() 
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: FacultyModel) {
             with(binding) {
-                val eyani = if (item.eyani == true) "Əyani" else "qiyabi"
+                val eyani = if (item.eyani == true) "əyani" else "qiyabi"
                 specName.text = "${item.facultyName}"
-                descripBtn.text = "ödenişsiz: ${item.dspoint} \n " +
-                        "ödenişli: ${item.nonDsPoint} \n" +
-                        "illik: ${item.fee}\n" +
-                        "$eyani"
-
+                descripBtn.text = "Dövlət sifarişli giriş balı:  ${item.dspoint}\n " +
+                         "Ödənişli giriş balı:  ${item.nonDsPoint}\n" +
+                         "İllik:  ${item.fee}\n" +
+                         "Təhsil forması:  $eyani"
             }
 
             binding.root.setOnClickListener {
