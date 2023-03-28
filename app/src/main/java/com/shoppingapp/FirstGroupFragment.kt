@@ -42,10 +42,10 @@ class FirstGroupFragment : Fragment() {
     setRw()
         database = Firebase.database
      binding.enterBtn.setOnClickListener {
-
          try {
              point = binding.yourPoint.text.toString().toDouble()
              universityList.clear()
+             uniIdList.clear()
              database.getReference("faculty").orderByChild("nonDsPoint").startAt(point)
                  .addChildEventListener(object : ChildEventListener {
                      override fun onChildAdded(dataSnapshot: DataSnapshot, prevChildKey: String?) {
