@@ -16,6 +16,10 @@ import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
 import com.shoppingapp.databinding.FragmentFirstGroupBinding
 import kotlinx.coroutines.delay
+import java.util.Stack
+import java.util.Vector
+import java.util.concurrent.atomic.AtomicIntegerArray
+import java.util.concurrent.atomic.AtomicReferenceArray
 
 
 class FirstGroupFragment : Fragment() {
@@ -24,7 +28,7 @@ class FirstGroupFragment : Fragment() {
     private lateinit var database: FirebaseDatabase
     private val universityList = arrayListOf<UniversityModel>()
     private var point : Double = 0.0
-    private val uniIdList  = arraySetOf<Int>()
+    private val uniIdList  = Stack<Int>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,6 +49,7 @@ class FirstGroupFragment : Fragment() {
          try {
              point = binding.yourPoint.text.toString().toDouble()
              universityList.clear()
+             universityAdapter.updateList(universityList)
              uniIdList.clear()
              database.getReference("faculty").orderByChild("nonDsPoint").startAt(point)
                  .addChildEventListener(object : ChildEventListener {
